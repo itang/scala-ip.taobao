@@ -1,8 +1,7 @@
-package me.itang
+package me.itang.iptaobao
 
 import org.scalatest.FunSpec
 import net.liftweb.json.JsonAST._
-import me.itang.iptaobao._
 
 class IpInfoSpec extends FunSpec {
 
