@@ -1,6 +1,6 @@
 package me.itang
 
-import net.liftweb.json.parse
+import net.liftweb.{ json => JSON }
 import net.liftweb.json.JsonAST._
 import scala.io.Source
 
@@ -10,9 +10,9 @@ package object iptaobao {
 
   def ipInfo(ip: String): JValue = {
     val ret = Source.fromURL(RestApiUrlPrefix + ip, "UTF-8").mkString
-    val json = parse(ret)
+    val json = JSON.parse(ret)
     json \ "code" match {
-      case JInt(a) if a == 0 => json \ "data"
+      case JInt(code) if (code == 0) => json \ "data"
       case _ => JNothing
     }
   }
