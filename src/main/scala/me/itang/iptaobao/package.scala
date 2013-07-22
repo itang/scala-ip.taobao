@@ -1,8 +1,8 @@
 package me.itang
 
+import scala.io.Source
 import net.liftweb.{ json => JSON }
 import net.liftweb.json.JsonAST._
-import scala.io.Source
 
 package object iptaobao {
 
