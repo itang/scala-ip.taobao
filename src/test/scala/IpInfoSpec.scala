@@ -7,7 +7,10 @@ class IpInfoSpec extends FunSpec {
 
   describe("ipInfo method") {
     it("good ip 8.8.8.8's country_id is US") {
-      assert((ipInfo("8.8.8.8") \ "country_id") === JString("US"))
+      val ret = ipInfo("8.8.8.8")
+      assert(ret \ "country_id" === JString("US"))
+      val JString(country) = ret \ "country"
+      assert(country === "美国")
     }
 
     it("bad ip 444.44 return JNothing") {
